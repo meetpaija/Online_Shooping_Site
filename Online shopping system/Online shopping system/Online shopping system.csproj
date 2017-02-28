@@ -1,0 +1,1359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{513FB477-8D94-4F91-B0A2-7D227DC7EEDF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Online_shopping_system</RootNamespace>
+    <AssemblyName>Online shopping system</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.3.7\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.1.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.1.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.1.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.1.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.1.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.1.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.1.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="aboutus.aspx" />
+    <Content Include="Account\AddPhoneNumber.aspx" />
+    <Content Include="Account\Confirm.aspx" />
+    <Content Include="Account\Forgot.aspx" />
+    <Content Include="Account\Lockout.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\ManageLogins.aspx" />
+    <Content Include="Account\ManagePassword.aspx" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Account\ResetPassword.aspx" />
+    <Content Include="Account\ResetPasswordConfirmation.aspx" />
+    <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
+    <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="admin\addadmin.aspx" />
+    <Content Include="admin\add_product.aspx" />
+    <Content Include="admin\admin_info.aspx" />
+    <Content Include="admin\delete_product.aspx" />
+    <Content Include="admin\logout.aspx" />
+    <Content Include="admin\modify_product.aspx" />
+    <Content Include="admin\orderhistory.aspx" />
+    <Content Include="admin\yourprofile.aspx" />
+    <Content Include="App_Data\shopping.mdf" />
+    <Content Include="App_Data\shopping_log.ldf">
+      <DependentUpon>shopping.mdf</DependentUpon>
+    </Content>
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-material-datetimepicker.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.js" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.min.js" />
+    <Content Include="Content\cbpAnimatedHeader.js" />
+    <Content Include="Content\cbpAnimatedHeader.min.js" />
+    <Content Include="Content\classie.js" />
+    <Content Include="Content\contact_me.js" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\freelancer.css" />
+    <Content Include="Content\freelancer.js" />
+    <Content Include="Content\jqBootstrapValidation.js" />
+    <Content Include="Content\jquery.js" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\w3.css" />
+    <Content Include="customer\cust_delivery.aspx" />
+    <Content Include="customer\cust_order.aspx" />
+    <Content Include="customer\forgotpwd.aspx" />
+    <Content Include="customer\login.aspx" />
+    <Content Include="customer\payment_order.aspx" />
+    <Content Include="customer\registration.aspx" />
+    <Content Include="customer\validate.aspx" />
+    <Content Include="cust_account\bags\Backpacks.aspx" />
+    <Content Include="cust_account\bags\Handbags , Clutches.aspx" />
+    <Content Include="cust_account\bags\Laptop Bags.aspx" />
+    <Content Include="cust_account\bags\Luggage.aspx" />
+    <Content Include="cust_account\bags\Messenger Bags.aspx" />
+    <Content Include="cust_account\bags\Wallets.aspx" />
+    <Content Include="cust_account\clothes\Kids%27s Clothing.aspx" />
+    <Content Include="cust_account\clothes\Men%27s Clothing.aspx" />
+    <Content Include="cust_account\clothes\Women%27s Clothing.aspx" />
+    <Content Include="cust_account\cust_logout.aspx" />
+    <Content Include="cust_account\cust_profile.aspx" />
+    <Content Include="cust_account\delivery_info.aspx" />
+    <Content Include="cust_account\display.aspx" />
+    <Content Include="cust_account\electronics\Laptop and Accessories.aspx" />
+    <Content Include="cust_account\electronics\Mobiles and Accessories.aspx" />
+    <Content Include="cust_account\electronics\Network Accessories.aspx" />
+    <Content Include="cust_account\electronics\PC Accessories.aspx" />
+    <Content Include="cust_account\electronics\Pendrive and Accessories.aspx" />
+    <Content Include="cust_account\electronics\Printers and Scanners.aspx" />
+    <Content Include="cust_account\jewellery\Men Jewellery.aspx" />
+    <Content Include="cust_account\jewellery\Spectacle Frames.aspx" />
+    <Content Include="cust_account\jewellery\Sunglasses.aspx" />
+    <Content Include="cust_account\jewellery\Traditionals Jewellery.aspx" />
+    <Content Include="cust_account\jewellery\Watches.aspx" />
+    <Content Include="cust_account\jewellery\Women Jewellery.aspx" />
+    <Content Include="cust_account\kitchen\Animal Appliances.aspx" />
+    <Content Include="cust_account\kitchen\Home Furnishing.aspx" />
+    <Content Include="cust_account\kitchen\Large Appliances.aspx" />
+    <Content Include="cust_account\kitchen\Lighting.aspx" />
+    <Content Include="cust_account\musical\Camera.aspx" />
+    <Content Include="cust_account\musical\Headphones , Earphones.aspx" />
+    <Content Include="cust_account\musical\Musical Instruments.aspx" />
+    <Content Include="cust_account\musical\Speakers.aspx" />
+    <Content Include="cust_account\musical\Televisions.aspx" />
+    <Content Include="cust_account\shoes\Casual Slippers.aspx" />
+    <Content Include="cust_account\shoes\Men%27s Shoes.aspx" />
+    <Content Include="cust_account\shoes\Sandals , Floaters.aspx" />
+    <Content Include="cust_account\shoes\Sports , Outdoors.aspx" />
+    <Content Include="cust_account\shoes\Women%27s Shoes.aspx" />
+    <Content Include="cust_account\sports\Cricket.aspx" />
+    <Content Include="cust_account\sports\golf.aspx" />
+    <Content Include="cust_account\kitchen\Home Appliances.aspx" />
+    <Content Include="cust_account\sports\swimming.aspx" />
+    <Content Include="cust_account\sports\table_tennis.aspx" />
+    <Content Include="cust_account\sports\tennis.aspx" />
+    <Content Include="cust_account\sports\boxing.aspx" />
+    <Content Include="cust_account\sports\football_vollyball.aspx" />
+    <Content Include="cust_account\yourcart.aspx" />
+    <Content Include="cust_account\yourorder.aspx" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="images\avatar-6.png" />
+    <Content Include="images\bags\004-128.png" />
+    <Content Include="images\bags\bag.png" />
+    <Content Include="images\bags\bag_128x128x32.png" />
+    <Content Include="images\bags\handbag\81+kTHfXpPL._UL1500_.jpg" />
+    <Content Include="images\bags\handbag\81pPC6A-ZuL._UL1500_.jpg" />
+    <Content Include="images\bags\kwallet.png" />
+    <Content Include="images\bags\leather_bag.png" />
+    <Content Include="images\bags\luggege\91fbSPLPYOL._SL1500_.jpg" />
+    <Content Include="images\bags\messenger bag\51776HHPwOL.jpg" />
+    <Content Include="images\bags\messenger bag\61Bw2r5BoRL._SL1004_.jpg" />
+    <Content Include="images\bags\wallet\61mmh+djcEL._UL1500_.jpg" />
+    <Content Include="images\bags\wallet\61OyN55spTL._UL1500_.jpg" />
+    <Content Include="images\bags\y_bag.png" />
+    <Content Include="images\carousal\ChUy8R4WgAAusxY.jpg" />
+    <Content Include="images\carousal\c_1.jpg" />
+    <Content Include="images\carousal\c_3.jpg" />
+    <Content Include="images\carousal\c_4.jpg" />
+    <Content Include="images\carousal\c_5.jpg" />
+    <Content Include="images\carousal\c_6.jpg" />
+    <Content Include="images\carousal\elearning-banner-blog.png" />
+    <Content Include="images\carousal\Hosted-eCommerce-Platforms-600x395.png" />
+    <Content Include="images\carousal\logo.png" />
+    <Content Include="images\carousal\onlineshopping.jpg" />
+    <Content Include="images\carousal\search.png" />
+    <Content Include="images\carousal\TMDT1_NEGO.jpg" />
+    <Content Include="images\clothes\cloth_wearing_dress_fashion_women_tunics_frock-128.png" />
+    <Content Include="images\clothes\kids\A1MxGC2mk3L._UL1500_.jpg" />
+    <Content Include="images\clothes\men\61LM+o1374L._UL1500_.jpg" />
+    <Content Include="images\clothes\men\61QPgexHRoL._UL1500_.jpg" />
+    <Content Include="images\clothes\shirt.png" />
+    <Content Include="images\clothes\women\61icGPJ0kbL._UL1500_.jpg" />
+    <Content Include="images\clothes\women\61S7LCLJdNL._UL1500_.jpg" />
+    <Content Include="images\electronics\internet\61dyE-+pAUL._SL1295_.jpg" />
+    <Content Include="images\electronics\internet\61GrjGzTyPL._SL1500_.jpg" />
+    <Content Include="images\electronics\internet\61ijjqrlePL._SL1252_.jpg" />
+    <Content Include="images\electronics\laptop\41GPeBcssaL.jpg" />
+    <Content Include="images\electronics\laptop\hi.jpg" />
+    <Content Include="images\electronics\laptop\610a6eLcm-L._SL1312_.jpg" />
+    <Content Include="images\electronics\mobile\81Ow7+JBhqL._SL1500_.jpg" />
+    <Content Include="images\electronics\mobile\81OYshSfAaL._SL1500_.jpg" />
+    <Content Include="images\electronics\mobile\91CQmmsX46L._SL1500_.jpg" />
+    <Content Include="images\electronics\pc accessories\7179nZqAblL._SL1500_.jpg" />
+    <Content Include="images\electronics\pc accessories\71M1v+VV7vL._SL1500_.jpg" />
+    <Content Include="images\electronics\pc accessories\71u3SSk6N9L._SL1500_.jpg" />
+    <Content Include="images\electronics\pendrive\41avAZDsJHL.jpg" />
+    <Content Include="images\electronics\pendrive\41C-wSrv+gL._SL1000_.jpg" />
+    <Content Include="images\electronics\pendrive\617TjMIouyL._SL1274_.jpg" />
+    <Content Include="images\electronics\printers\81CO5Iqt7FL._SL1500_.jpg" />
+    <Content Include="images\electronics\printers\81m-MhxToVL._SL1500_.jpg" />
+    <Content Include="images\electronics\printers\81w+RxT+ghL._SL1500_.jpg" />
+    <Content Include="images\jewellery\bracelet.png" />
+    <Content Include="images\jewellery\frames\617wvLSH9lL._UL1500_.jpg" />
+    <Content Include="images\jewellery\frames\61Sg9XtXF1L._UL1500_.jpg" />
+    <Content Include="images\jewellery\men\61niW17wWiL._UL1500_.jpg" />
+    <Content Include="images\jewellery\pendant.png" />
+    <Content Include="images\jewellery\spaceclaim.135.png" />
+    <Content Include="images\jewellery\sunglasses\61JX3VOgh4L._UL1500_.jpg" />
+    <Content Include="images\jewellery\watch\61ygc0T+dhL._UL1500_.jpg" />
+    <Content Include="images\jewellery\watch\81P7NzmJdjL._UL1500_.jpg" />
+    <Content Include="images\jewellery\watch\91C6vOni9FL._UL1500_.jpg" />
+    <Content Include="images\jewellery\women\51xHdHEe1zL._UL1500_.jpg" />
+    <Content Include="images\logo_2.png" />
+    <Content Include="images\LoopPay-main.jpg" />
+    <Content Include="images\music\camera\413T9-X5IfL.jpg" />
+    <Content Include="images\music\camera\41EwMbHyPmL.jpg" />
+    <Content Include="images\music\camera\51+lC43HUAL._SX450_.jpg" />
+    <Content Include="images\music\headphone\41qR0GZ4uRL._SY450_.jpg" />
+    <Content Include="images\music\headphone\51gvGAIuIML._SX355_.jpg" />
+    <Content Include="images\music\headphone\81dV99WIj3L._SX355_.jpg" />
+    <Content Include="images\music\speaker\514-h6V2MYL._SL1250_.jpg" />
+    <Content Include="images\music\speaker\51vtCDL9keL._SL1250_.jpg" />
+    <Content Include="images\music\tv\61pOp7plJjL._SL1500_.jpg" />
+    <Content Include="images\music\tv\71VGbX4MLrL._SL1500_.jpg" />
+    <Content Include="images\shoes\Geart_Shoes_Traditional_Sandals.png" />
+    <Content Include="images\shoes\shoes.png" />
+    <Content Include="images\shoes\shoe_woman.png" />
+    <Content Include="images\clothes\t_shirt.png" />
+    <Content Include="images\electronics\internet\network.png" />
+    <Content Include="images\electronics\laptop\portablecomputer.png" />
+    <Content Include="images\electronics\mobile\cellphone.png" />
+    <Content Include="images\electronics\pc accessories\redhat_system_tools.png" />
+    <Content Include="images\electronics\pendrive\pcb.png" />
+    <Content Include="images\electronics\printers\print_printer.png" />
+    <Content Include="images\jewellery\chanel_pink_glasses.png" />
+    <Content Include="images\jewellery\kghostview.png" />
+    <Content Include="images\jewellery\pocket_watch.png" />
+    <Content Include="images\kitchen\animal\hot_dog.png" />
+    <Content Include="images\kitchen\Furnishing\futon_bed.png" />
+    <Content Include="images\kitchen\home\kitchen_icon.png" />
+    <Content Include="images\kitchen\large\kitchen_icon_2.png" />
+    <Content Include="images\kitchen\lighting\office1.png" />
+    <Content Include="images\music\alesis_m1_active_mk2_speakers_2.png" />
+    <Content Include="images\music\camera_unmount2.png" />
+    <Content Include="images\music\headphones.png" />
+    <Content Include="images\music\portable_music_player.png" />
+    <Content Include="images\music\tv.png" />
+    <Content Include="images\shoes\slipper2.png" />
+    <Content Include="images\shoes\soccer_5.png" />
+    <Content Include="images\sports\boxing\boxing\b1\31+58z2FU+L.jpg" />
+    <Content Include="images\sports\boxing\boxing\b2\313CJ5cfqIL.jpg" />
+    <Content Include="images\sports\boxing\boxing\b3\51xbpG2YQnL.jpg" />
+    <Content Include="images\sports\boxing\boxing\b3\610KD-n8o5L._SL1500_.jpg" />
+    <Content Include="images\sports\boxing\boxing\b3\61aNljodYjL._SL1500_.jpg" />
+    <Content Include="images\sports\boxing\boxing_gloves.png" />
+    <Content Include="images\sports\boxing\handwrap\h1\71Q3kh2fxpL._SL1079_.jpg" />
+    <Content Include="images\sports\boxing\handwrap\h2\81mpWTX+d3L._SL1500_.jpg" />
+    <Content Include="images\sports\boxing\handwrap\h2\912Agrmo+aL._SL1500_.jpg" />
+    <Content Include="images\sports\boxing\handwrap\h3\71iDNG3OQML._SL1197_.jpg" />
+    <Content Include="images\sports\cricket\ball\ball1\4176A54FbAL.jpg" />
+    <Content Include="images\sports\cricket\ball\ball2\313rPqub-TL.jpg" />
+    <Content Include="images\sports\cricket\ball\ball2\31Lzx4KX-XL.jpg" />
+    <Content Include="images\sports\cricket\ball\ball3\31Lzx4KX-XL.jpg" />
+    <Content Include="images\sports\cricket\ball\ball3\31uhEX+5mQL.jpg" />
+    <Content Include="images\sports\cricket\ball\ball3\41rkSPlA9gL.jpg" />
+    <Content Include="images\sports\cricket\bat\bat1\21vPOkYGR1L.jpg" />
+    <Content Include="images\sports\cricket\bat\bat1\31cQFRnAlxL.jpg" />
+    <Content Include="images\sports\cricket\bat\bat1\31WWRjkuS2L.jpg" />
+    <Content Include="images\sports\cricket\bat\bat2\41FIrC5PomL.jpg" />
+    <Content Include="images\sports\cricket\bat\bat2\41fpCeKM23L.jpg" />
+    <Content Include="images\sports\cricket\bat\bat2\61utDNPEW7L._SL1425_.jpg" />
+    <Content Include="images\sports\cricket\bat\bat3\61D-Qw5XbpL._SL1500_.jpg" />
+    <Content Include="images\sports\cricket\bat\bat3\71O6yAyDKcL._SL1500_ %281%29.jpg" />
+    <Content Include="images\sports\cricket\bat\bat3\71O6yAyDKcL._SL1500_.jpg" />
+    <Content Include="images\sports\cricket\cricket.png" />
+    <Content Include="images\sports\cricket\cricket_2.png" />
+    <Content Include="images\sports\cricket\gloves\gloves1\41sWPJjYNTL.jpg" />
+    <Content Include="images\sports\cricket\gloves\gloves2\81x-Fr5d5GL._SL1500_.jpg" />
+    <Content Include="images\sports\cricket\gloves\gloves2\81xFQU4rpYL._SL1500_.jpg" />
+    <Content Include="images\sports\cricket\gloves\gloves3\61G97MEemNL._SL1400_.jpg" />
+    <Content Include="images\sports\cricket\gloves\gloves3\61QGHoJAGtL._SL1400_.jpg" />
+    <Content Include="images\sports\cricket\gloves\gloves3\61VafBc5PQL._SL1400_.jpg" />
+    <Content Include="images\sports\football or volleyball\classic.png" />
+    <Content Include="images\sports\football or volleyball\football\f1\51dogMXMekL._SY355_.jpg" />
+    <Content Include="images\sports\football or volleyball\football\f1\51pdlGKOdfL._SY355_.jpg" />
+    <Content Include="images\sports\football or volleyball\football\f1\81N-Nw5IrFL._SL1500_.jpg" />
+    <Content Include="images\sports\football or volleyball\football\f2\815CYLTrd2L._SL1500_.jpg" />
+    <Content Include="images\sports\football or volleyball\football\f3\71PrGuS2vkL._SL1500_.jpg" />
+    <Content Include="images\sports\football or volleyball\football\f3\815kxyYx8zL._SL1500_.jpg" />
+    <Content Include="images\sports\football or volleyball\shoes\s1\81RSyFt6JPL._SL1500_.jpg" />
+    <Content Include="images\sports\football or volleyball\shoes\s1\81tcQaB97FL._SL1500_.jpg" />
+    <Content Include="images\sports\football or volleyball\shoes\s1\91-rphLqreL._SL1500_.jpg" />
+    <Content Include="images\sports\football or volleyball\shoes\s2\51-WcRI1IKL._SL1024_.jpg" />
+    <Content Include="images\sports\football or volleyball\shoes\s2\51ycAaNfJkL._SL1024_.jpg" />
+    <Content Include="images\sports\football or volleyball\shoes\s2\61wZxdNFClL._SL1024_.jpg" />
+    <Content Include="images\sports\football or volleyball\shoes\s3\61+BTY45EfL._SL1200_.jpg" />
+    <Content Include="images\sports\football or volleyball\shoes\s3\61JbQuZwu8L._SL1200_.jpg" />
+    <Content Include="images\sports\football or volleyball\shoes\s3\61l4fmPJsPL._SL1200_.jpg" />
+    <Content Include="images\sports\golf\bag\b1\61Tfb9wwlhL._SL1300_.jpg" />
+    <Content Include="images\sports\golf\bag\b1\61VM36G7MHL._SL1300_.jpg" />
+    <Content Include="images\sports\golf\bag\b1\61YAC5dFIsL._SL1300_.jpg" />
+    <Content Include="images\sports\golf\bag\b2\51b-4lNF4AL._SL1000_.jpg" />
+    <Content Include="images\sports\golf\bag\b2\51BN9PY7qQL._SL1000_.jpg" />
+    <Content Include="images\sports\golf\bag\b3\511mQmGLJ8L._SL1000_.jpg" />
+    <Content Include="images\sports\golf\ball\b1\31tOuQqYMCL._SY355_.jpg" />
+    <Content Include="images\sports\golf\ball\b2\41POpVUHSyL._SX355_.jpg" />
+    <Content Include="images\sports\golf\ball\b3\51UxOyPIUlL._SY355_.jpg" />
+    <Content Include="images\sports\golf\club\c1\51XVCOO9mqL._SL1299_.jpg" />
+    <Content Include="images\sports\golf\club\c1\61o8hBzqhRL._SL1299_.jpg" />
+    <Content Include="images\sports\golf\club\c1\61zTnU6H5uL._SL1299_.jpg" />
+    <Content Include="images\sports\golf\club\c2\61V2xcUpYHL._SL1000_.jpg" />
+    <Content Include="images\sports\golf\club\c3\61HA1gf6vIL._SL1500_.jpg" />
+    <Content Include="images\sports\golf\club\c3\713uVP7OuxL._SL1500_.jpg" />
+    <Content Include="images\sports\golf\club\c3\71OU-LwENeL._SL1500_.jpg" />
+    <Content Include="images\sports\golf\golf.png" />
+    <Content Include="images\sports\swimming\caps\c1\51LQFZFY2kL._SL1000_.jpg" />
+    <Content Include="images\sports\swimming\caps\c1\61awW3iyRnL._SL1000_.jpg" />
+    <Content Include="images\sports\swimming\caps\c2\31dKpZta6nL.jpg" />
+    <Content Include="images\sports\swimming\caps\c2\41Xo8h35GPL.jpg" />
+    <Content Include="images\sports\swimming\caps\c3\51dy1IeKPWL._SL1024_.jpg" />
+    <Content Include="images\sports\swimming\caps\c3\81aQp-nJfLL._SL1500_.jpg" />
+    <Content Include="images\sports\swimming\goglles\g1\41yTKl3ojwL._SX355_.jpg" />
+    <Content Include="images\sports\swimming\goglles\g2\41a0gXlO86L._SX355_.jpg" />
+    <Content Include="images\sports\swimming\goglles\g2\41NoAsCH1DL._SX355_.jpg" />
+    <Content Include="images\sports\swimming\goglles\g2\41TKwTOHpSL._SX355_.jpg" />
+    <Content Include="images\sports\swimming\goglles\g3\51oScv+E8VL._SL1024_.jpg" />
+    <Content Include="images\sports\swimming\goglles\g3\71IfebOHMML._SL1500_.jpg" />
+    <Content Include="images\sports\swimming\swimming.png" />
+    <Content Include="images\sports\swimming\wear\w1\419d-CTdp9L._SL1000_.jpg" />
+    <Content Include="images\sports\swimming\wear\w1\51fZ1uyvxkL._SL1000_.jpg" />
+    <Content Include="images\sports\swimming\wear\w1\51iixWovdkL._SL1000_.jpg" />
+    <Content Include="images\sports\swimming\wear\w2\61-tx6n2KtL._SL1000_.jpg" />
+    <Content Include="images\sports\swimming\wear\w2\61a1TJ4USWL._SL1000_.jpg" />
+    <Content Include="images\sports\swimming\wear\w3\21sGtmCLyYL.jpg" />
+    <Content Include="images\sports\swimming\wear\w3\41xneBEKK1L._SY355_.jpg" />
+    <Content Include="images\sports\swimming\wear\w3\71zjWYGxWyL._SL1000_.jpg" />
+    <Content Include="images\sports\t-t\bags\b1\81LmIZ+cgJL._SL1500_.jpg" />
+    <Content Include="images\sports\t-t\bags\b1\91PkmDLamzL._SL1500_.jpg" />
+    <Content Include="images\sports\t-t\bags\b1\91WX8SwhaML._SL1500_.jpg" />
+    <Content Include="images\sports\t-t\bags\b2\61FfwGL3xML._SL1000_.jpg" />
+    <Content Include="images\sports\t-t\bags\b2\61WbOhEmHiL._SL1000_.jpg" />
+    <Content Include="images\sports\t-t\bags\b2\71Oc26R7EBL._SL1000_.jpg" />
+    <Content Include="images\sports\t-t\bags\b3\81UhD64tbUL._SL1500_.jpg" />
+    <Content Include="images\sports\t-t\ball\b1\314F9NmJmpL.jpg" />
+    <Content Include="images\sports\t-t\ball\b2\617F1XajKhL._SL1200_.jpg" />
+    <Content Include="images\sports\t-t\ball\b3\61GAaD4VIrL._SL1000_.jpg" />
+    <Content Include="images\sports\t-t\rac\r1\81ajXb2I5pL._SL1500_.jpg" />
+    <Content Include="images\sports\t-t\rac\r1\81hVBUztZUL._SL1500_.jpg" />
+    <Content Include="images\sports\t-t\rac\r1\81MQvDDmFwL._SL1500_.jpg" />
+    <Content Include="images\sports\t-t\rac\r2\51O+Kot24dL.jpg" />
+    <Content Include="images\sports\t-t\rac\r3\71eGGIEh0OL._SL1500_.jpg" />
+    <Content Include="images\sports\t-t\rac\r3\814w58v98RL._SL1500_.jpg" />
+    <Content Include="images\sports\t-t\rac\r3\81DHOHfoDrL._SL1500_.jpg" />
+    <Content Include="images\sports\t-t\table_tennis.png" />
+    <Content Include="images\sports\tennis\ball\b1\51TbzpKT0JL._SL1200_.jpg" />
+    <Content Include="images\sports\tennis\ball\b1\71Z2qrM3yLL._SL1500_.jpg" />
+    <Content Include="images\sports\tennis\ball\b2\31lOPz72VHL.jpg" />
+    <Content Include="images\sports\tennis\ball\b3\71-0wLiOciL._SL1500_.jpg" />
+    <Content Include="images\sports\tennis\footware\f1\7101sdDCK9L._UL1500_.jpg" />
+    <Content Include="images\sports\tennis\footware\f1\71Q7HW2qJsL._UL1500_.jpg" />
+    <Content Include="images\sports\tennis\footware\f1\81FRGEH1KUL._UL1500_.jpg" />
+    <Content Include="images\sports\tennis\footware\f2\41BpAdRpnOL.jpg" />
+    <Content Include="images\sports\tennis\footware\f3\51WW0feZ1UL._SX466_.jpg" />
+    <Content Include="images\sports\tennis\rac\r1\615zn3rrC5L._SL1500_.jpg" />
+    <Content Include="images\sports\tennis\rac\r2\811rqPyVvZL._SL1500_.jpg" />
+    <Content Include="images\sports\tennis\rac\r2\8152E8KzgcL._SL1500_.jpg" />
+    <Content Include="images\sports\tennis\rac\r2\81tUbKHHq3L._SL1500_.jpg" />
+    <Content Include="images\sports\tennis\rac\r3\31BQ1l3aUhL.jpg" />
+    <Content Include="images\sports\tennis\rac\r3\51PkC0umsuL._SL1000_.jpg" />
+    <Content Include="images\sports\tennis\tennis_2.png" />
+    <Content Include="master.aspx" />
+    <Content Include="Account\Web.config" />
+    <Content Include="Content\fontawesome-webfont.eot" />
+    <Content Include="Content\fontawesome-webfont.ttf" />
+    <Content Include="Content\fontawesome-webfont.woff" />
+    <Content Include="Content\fontawesome-webfont.woff2" />
+    <Content Include="Content\FontAwesome.otf" />
+    <Content Include="Scripts\ai.0.22.19-build00125.js" />
+    <Content Include="Scripts\ai.0.22.19-build00125.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap\wells.less" />
+    <Content Include="Content\bootstrap\variables.less" />
+    <Content Include="Content\bootstrap\utilities.less" />
+    <Content Include="Content\bootstrap\type.less" />
+    <Content Include="Content\bootstrap\tooltip.less" />
+    <Content Include="Content\bootstrap\thumbnails.less" />
+    <Content Include="Content\bootstrap\theme.less" />
+    <Content Include="Content\bootstrap\tables.less" />
+    <Content Include="Content\bootstrap\scaffolding.less" />
+    <Content Include="Content\bootstrap\responsive-utilities.less" />
+    <Content Include="Content\bootstrap\responsive-embed.less" />
+    <Content Include="Content\bootstrap\progress-bars.less" />
+    <Content Include="Content\bootstrap\print.less" />
+    <Content Include="Content\bootstrap\popovers.less" />
+    <Content Include="Content\bootstrap\panels.less" />
+    <Content Include="Content\bootstrap\pagination.less" />
+    <Content Include="Content\bootstrap\pager.less" />
+    <Content Include="Content\bootstrap\normalize.less" />
+    <Content Include="Content\bootstrap\navs.less" />
+    <Content Include="Content\bootstrap\navbar.less" />
+    <Content Include="Content\bootstrap\modals.less" />
+    <Content Include="Content\bootstrap\mixins\vendor-prefixes.less" />
+    <Content Include="Content\bootstrap\mixins\text-overflow.less" />
+    <Content Include="Content\bootstrap\mixins\text-emphasis.less" />
+    <Content Include="Content\bootstrap\mixins\table-row.less" />
+    <Content Include="Content\bootstrap\mixins\tab-focus.less" />
+    <Content Include="Content\bootstrap\mixins\size.less" />
+    <Content Include="Content\bootstrap\mixins\responsive-visibility.less" />
+    <Content Include="Content\bootstrap\mixins\resize.less" />
+    <Content Include="Content\bootstrap\mixins\reset-text.less" />
+    <Content Include="Content\bootstrap\mixins\reset-filter.less" />
+    <Content Include="Content\bootstrap\mixins\progress-bar.less" />
+    <Content Include="Content\bootstrap\mixins\panels.less" />
+    <Content Include="Content\bootstrap\mixins\pagination.less" />
+    <Content Include="Content\bootstrap\mixins\opacity.less" />
+    <Content Include="Content\bootstrap\mixins\nav-vertical-align.less" />
+    <Content Include="Content\bootstrap\mixins\nav-divider.less" />
+    <Content Include="Content\bootstrap\mixins\list-group.less" />
+    <Content Include="Content\bootstrap\mixins\labels.less" />
+    <Content Include="Content\bootstrap\mixins\image.less" />
+    <Content Include="Content\bootstrap\mixins\hide-text.less" />
+    <Content Include="Content\bootstrap\mixins\grid.less" />
+    <Content Include="Content\bootstrap\mixins\grid-framework.less" />
+    <Content Include="Content\bootstrap\mixins\gradients.less" />
+    <Content Include="Content\bootstrap\mixins\forms.less" />
+    <Content Include="Content\bootstrap\mixins\clearfix.less" />
+    <Content Include="Content\bootstrap\mixins\center-block.less" />
+    <Content Include="Content\bootstrap\mixins\buttons.less" />
+    <Content Include="Content\bootstrap\mixins\border-radius.less" />
+    <Content Include="Content\bootstrap\mixins\background-variant.less" />
+    <Content Include="Content\bootstrap\mixins\alerts.less" />
+    <Content Include="Content\bootstrap\mixins.less" />
+    <Content Include="Content\bootstrap\media.less" />
+    <Content Include="Content\bootstrap\list-group.less" />
+    <Content Include="Content\bootstrap\labels.less" />
+    <Content Include="Content\bootstrap\jumbotron.less" />
+    <Content Include="Content\bootstrap\input-groups.less" />
+    <Content Include="Content\bootstrap\grid.less" />
+    <Content Include="Content\bootstrap\glyphicons.less" />
+    <Content Include="Content\bootstrap\forms.less" />
+    <Content Include="Content\bootstrap\dropdowns.less" />
+    <Content Include="Content\bootstrap\component-animations.less" />
+    <Content Include="Content\bootstrap\code.less" />
+    <Content Include="Content\bootstrap\close.less" />
+    <Content Include="Content\bootstrap\carousel.less" />
+    <Content Include="Content\bootstrap\buttons.less" />
+    <Content Include="Content\bootstrap\button-groups.less" />
+    <Content Include="Content\bootstrap\breadcrumbs.less" />
+    <Content Include="Content\bootstrap\bootstrap.less" />
+    <Content Include="Content\bootstrap\badges.less" />
+    <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="Content\fonts\animated.less" />
+    <Content Include="Content\fonts\bordered-pulled.less" />
+    <Content Include="Content\fonts\core.less" />
+    <Content Include="Content\fonts\fixed-width.less" />
+    <Content Include="Content\fonts\font-awesome.less" />
+    <Content Include="Content\fonts\icons.less" />
+    <Content Include="Content\fonts\larger.less" />
+    <Content Include="Content\fonts\list.less" />
+    <Content Include="Content\fonts\mixins.less" />
+    <Content Include="Content\fonts\path.less" />
+    <Content Include="Content\fonts\rotated-flipped.less" />
+    <Content Include="Content\fonts\screen-reader.less" />
+    <Content Include="Content\fonts\stacked.less" />
+    <Content Include="Content\fonts\variables.less" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="WebForm1.aspx" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Site.Master" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Site.Mobile.Master" />
+    <Content Include="shopping.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>shopping.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="aboutus.aspx.cs">
+      <DependentUpon>aboutus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aboutus.aspx.designer.cs">
+      <DependentUpon>aboutus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\AddPhoneNumber.aspx.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\AddPhoneNumber.aspx.designer.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.designer.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.designer.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.designer.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.designer.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.designer.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.designer.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.designer.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\addadmin.aspx.cs">
+      <DependentUpon>addadmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\addadmin.aspx.designer.cs">
+      <DependentUpon>addadmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\add_product.aspx.cs">
+      <DependentUpon>add_product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\add_product.aspx.designer.cs">
+      <DependentUpon>add_product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\admin_info.aspx.cs">
+      <DependentUpon>admin_info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\admin_info.aspx.designer.cs">
+      <DependentUpon>admin_info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\delete_product.aspx.cs">
+      <DependentUpon>delete_product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\delete_product.aspx.designer.cs">
+      <DependentUpon>delete_product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\modify_product.aspx.cs">
+      <DependentUpon>modify_product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\modify_product.aspx.designer.cs">
+      <DependentUpon>modify_product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\orderhistory.aspx.cs">
+      <DependentUpon>orderhistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\orderhistory.aspx.designer.cs">
+      <DependentUpon>orderhistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\yourprofile.aspx.cs">
+      <DependentUpon>yourprofile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\yourprofile.aspx.designer.cs">
+      <DependentUpon>yourprofile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\cust_delivery.aspx.cs">
+      <DependentUpon>cust_delivery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\cust_delivery.aspx.designer.cs">
+      <DependentUpon>cust_delivery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\cust_order.aspx.cs">
+      <DependentUpon>cust_order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\cust_order.aspx.designer.cs">
+      <DependentUpon>cust_order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\forgotpwd.aspx.cs">
+      <DependentUpon>forgotpwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\forgotpwd.aspx.designer.cs">
+      <DependentUpon>forgotpwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\payment_order.aspx.cs">
+      <DependentUpon>payment_order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\payment_order.aspx.designer.cs">
+      <DependentUpon>payment_order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\registration.aspx.cs">
+      <DependentUpon>registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\registration.aspx.designer.cs">
+      <DependentUpon>registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\validate.aspx.cs">
+      <DependentUpon>validate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\validate.aspx.designer.cs">
+      <DependentUpon>validate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\bags\Backpacks.aspx.cs">
+      <DependentUpon>Backpacks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\bags\Backpacks.aspx.designer.cs">
+      <DependentUpon>Backpacks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\bags\Handbags , Clutches.aspx.cs">
+      <DependentUpon>Handbags , Clutches.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\bags\Handbags , Clutches.aspx.designer.cs">
+      <DependentUpon>Handbags , Clutches.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\bags\Laptop Bags.aspx.cs">
+      <DependentUpon>Laptop Bags.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\bags\Laptop Bags.aspx.designer.cs">
+      <DependentUpon>Laptop Bags.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\bags\Luggage.aspx.cs">
+      <DependentUpon>Luggage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\bags\Luggage.aspx.designer.cs">
+      <DependentUpon>Luggage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\bags\Messenger Bags.aspx.cs">
+      <DependentUpon>Messenger Bags.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\bags\Messenger Bags.aspx.designer.cs">
+      <DependentUpon>Messenger Bags.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\bags\Wallets.aspx.cs">
+      <DependentUpon>Wallets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\bags\Wallets.aspx.designer.cs">
+      <DependentUpon>Wallets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\clothes\Kids%27s Clothing.aspx.cs">
+      <DependentUpon>Kids%27s Clothing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\clothes\Kids%27s Clothing.aspx.designer.cs">
+      <DependentUpon>Kids%27s Clothing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\clothes\Men%27s Clothing.aspx.cs">
+      <DependentUpon>Men%27s Clothing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\clothes\Men%27s Clothing.aspx.designer.cs">
+      <DependentUpon>Men%27s Clothing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\clothes\Women%27s Clothing.aspx.cs">
+      <DependentUpon>Women%27s Clothing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\clothes\Women%27s Clothing.aspx.designer.cs">
+      <DependentUpon>Women%27s Clothing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\cust_logout.aspx.cs">
+      <DependentUpon>cust_logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\cust_logout.aspx.designer.cs">
+      <DependentUpon>cust_logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\cust_profile.aspx.cs">
+      <DependentUpon>cust_profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\cust_profile.aspx.designer.cs">
+      <DependentUpon>cust_profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\delivery_info.aspx.cs">
+      <DependentUpon>delivery_info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\delivery_info.aspx.designer.cs">
+      <DependentUpon>delivery_info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\display.aspx.cs">
+      <DependentUpon>display.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\display.aspx.designer.cs">
+      <DependentUpon>display.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\electronics\Laptop and Accessories.aspx.cs">
+      <DependentUpon>Laptop and Accessories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\electronics\Laptop and Accessories.aspx.designer.cs">
+      <DependentUpon>Laptop and Accessories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\electronics\Mobiles and Accessories.aspx.cs">
+      <DependentUpon>Mobiles and Accessories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\electronics\Mobiles and Accessories.aspx.designer.cs">
+      <DependentUpon>Mobiles and Accessories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\electronics\Network Accessories.aspx.cs">
+      <DependentUpon>Network Accessories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\electronics\Network Accessories.aspx.designer.cs">
+      <DependentUpon>Network Accessories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\electronics\PC Accessories.aspx.cs">
+      <DependentUpon>PC Accessories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\electronics\PC Accessories.aspx.designer.cs">
+      <DependentUpon>PC Accessories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\electronics\Pendrive and Accessories.aspx.cs">
+      <DependentUpon>Pendrive and Accessories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\electronics\Pendrive and Accessories.aspx.designer.cs">
+      <DependentUpon>Pendrive and Accessories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\electronics\Printers and Scanners.aspx.cs">
+      <DependentUpon>Printers and Scanners.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\electronics\Printers and Scanners.aspx.designer.cs">
+      <DependentUpon>Printers and Scanners.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\jewellery\Men Jewellery.aspx.cs">
+      <DependentUpon>Men Jewellery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\jewellery\Men Jewellery.aspx.designer.cs">
+      <DependentUpon>Men Jewellery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\jewellery\Spectacle Frames.aspx.cs">
+      <DependentUpon>Spectacle Frames.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\jewellery\Spectacle Frames.aspx.designer.cs">
+      <DependentUpon>Spectacle Frames.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\jewellery\Sunglasses.aspx.cs">
+      <DependentUpon>Sunglasses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\jewellery\Sunglasses.aspx.designer.cs">
+      <DependentUpon>Sunglasses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\jewellery\Traditionals Jewellery.aspx.cs">
+      <DependentUpon>Traditionals Jewellery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\jewellery\Traditionals Jewellery.aspx.designer.cs">
+      <DependentUpon>Traditionals Jewellery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\jewellery\Watches.aspx.cs">
+      <DependentUpon>Watches.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\jewellery\Watches.aspx.designer.cs">
+      <DependentUpon>Watches.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\jewellery\Women Jewellery.aspx.cs">
+      <DependentUpon>Women Jewellery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\jewellery\Women Jewellery.aspx.designer.cs">
+      <DependentUpon>Women Jewellery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\kitchen\Animal Appliances.aspx.cs">
+      <DependentUpon>Animal Appliances.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\kitchen\Animal Appliances.aspx.designer.cs">
+      <DependentUpon>Animal Appliances.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\kitchen\Home Furnishing.aspx.cs">
+      <DependentUpon>Home Furnishing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\kitchen\Home Furnishing.aspx.designer.cs">
+      <DependentUpon>Home Furnishing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\kitchen\Large Appliances.aspx.cs">
+      <DependentUpon>Large Appliances.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\kitchen\Large Appliances.aspx.designer.cs">
+      <DependentUpon>Large Appliances.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\kitchen\Lighting.aspx.cs">
+      <DependentUpon>Lighting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\kitchen\Lighting.aspx.designer.cs">
+      <DependentUpon>Lighting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\musical\Camera.aspx.cs">
+      <DependentUpon>Camera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\musical\Camera.aspx.designer.cs">
+      <DependentUpon>Camera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\musical\Headphones , Earphones.aspx.cs">
+      <DependentUpon>Headphones , Earphones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\musical\Headphones , Earphones.aspx.designer.cs">
+      <DependentUpon>Headphones , Earphones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\musical\Musical Instruments.aspx.cs">
+      <DependentUpon>Musical Instruments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\musical\Musical Instruments.aspx.designer.cs">
+      <DependentUpon>Musical Instruments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\musical\Speakers.aspx.cs">
+      <DependentUpon>Speakers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\musical\Speakers.aspx.designer.cs">
+      <DependentUpon>Speakers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\musical\Televisions.aspx.cs">
+      <DependentUpon>Televisions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\musical\Televisions.aspx.designer.cs">
+      <DependentUpon>Televisions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\shoes\Casual Slippers.aspx.cs">
+      <DependentUpon>Casual Slippers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\shoes\Casual Slippers.aspx.designer.cs">
+      <DependentUpon>Casual Slippers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\shoes\Men%27s Shoes.aspx.cs">
+      <DependentUpon>Men%27s Shoes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\shoes\Men%27s Shoes.aspx.designer.cs">
+      <DependentUpon>Men%27s Shoes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\shoes\Sandals , Floaters.aspx.cs">
+      <DependentUpon>Sandals , Floaters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\shoes\Sandals , Floaters.aspx.designer.cs">
+      <DependentUpon>Sandals , Floaters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\shoes\Sports , Outdoors.aspx.cs">
+      <DependentUpon>Sports , Outdoors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\shoes\Sports , Outdoors.aspx.designer.cs">
+      <DependentUpon>Sports , Outdoors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\shoes\Women%27s Shoes.aspx.cs">
+      <DependentUpon>Women%27s Shoes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\shoes\Women%27s Shoes.aspx.designer.cs">
+      <DependentUpon>Women%27s Shoes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\sports\Cricket.aspx.cs">
+      <DependentUpon>Cricket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\sports\Cricket.aspx.designer.cs">
+      <DependentUpon>Cricket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\sports\golf.aspx.cs">
+      <DependentUpon>golf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\sports\golf.aspx.designer.cs">
+      <DependentUpon>golf.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\kitchen\Home Appliances.aspx.cs">
+      <DependentUpon>Home Appliances.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\kitchen\Home Appliances.aspx.designer.cs">
+      <DependentUpon>Home Appliances.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\sports\swimming.aspx.cs">
+      <DependentUpon>swimming.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\sports\swimming.aspx.designer.cs">
+      <DependentUpon>swimming.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\sports\table_tennis.aspx.cs">
+      <DependentUpon>table_tennis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\sports\table_tennis.aspx.designer.cs">
+      <DependentUpon>table_tennis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\sports\tennis.aspx.cs">
+      <DependentUpon>tennis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\sports\tennis.aspx.designer.cs">
+      <DependentUpon>tennis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\sports\boxing.aspx.cs">
+      <DependentUpon>boxing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\sports\boxing.aspx.designer.cs">
+      <DependentUpon>boxing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\sports\football_vollyball.aspx.cs">
+      <DependentUpon>football_vollyball.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\sports\football_vollyball.aspx.designer.cs">
+      <DependentUpon>football_vollyball.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\yourcart.aspx.cs">
+      <DependentUpon>yourcart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\yourcart.aspx.designer.cs">
+      <DependentUpon>yourcart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cust_account\yourorder.aspx.cs">
+      <DependentUpon>yourorder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cust_account\yourorder.aspx.designer.cs">
+      <DependentUpon>yourorder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="master.aspx.cs">
+      <DependentUpon>master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master.aspx.designer.cs">
+      <DependentUpon>master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="shopping.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>shopping.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\bags\laptop bag\" />
+    <Folder Include="images\music\instruments\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shopping.dbml.layout">
+      <DependentUpon>shopping.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50154</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50154/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

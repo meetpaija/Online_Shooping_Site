@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="shopping" Class="shoppingDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\shopping.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="shoppingConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.prod_cat" Member="prod_cats">
+    <Type Name="prod_cat">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cat_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="prod_cat_prod_cat_2" Member="prod_cat_2s" ThisKey="id" OtherKey="cat_id" Type="prod_cat_2" />
+      <Association Name="prod_cat_product" Member="products" ThisKey="id" OtherKey="cat_id" Type="product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.city" Member="cities">
+    <Type Name="city">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="city_name" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="state_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="state_city" Member="state" ThisKey="state_id" OtherKey="Id" Type="state" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.state" Member="states">
+    <Type Name="state">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="state_name" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Association Name="state_city" Member="cities" ThisKey="Id" OtherKey="state_id" Type="city" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[user]" Member="users">
+    <Type Name="user">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="first_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="last_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email_id" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="gender" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="mob_no" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="state" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="question" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="answer" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="role" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="user_cart" Member="carts" ThisKey="id" OtherKey="cust_id" Type="cart" />
+      <Association Name="user_address" Member="addresses" ThisKey="id" OtherKey="user_id" Type="address" />
+      <Association Name="user_order" Member="orders" ThisKey="id" OtherKey="cust_id" Type="order" />
+      <Association Name="user_delivery" Member="deliveries" ThisKey="id" OtherKey="cust_id" Type="delivery" />
+      <Association Name="user_feedback" Member="feedbacks" ThisKey="id" OtherKey="cust_id" Type="feedback" />
+    </Type>
+  </Table>
+  <Table Name="dbo.prod_cat_2" Member="prod_cat_2s">
+    <Type Name="prod_cat_2">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cat_name_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cat_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="prod_cat_2_product" Member="products" ThisKey="Id" OtherKey="cat_id_2" Type="product" />
+      <Association Name="prod_cat_prod_cat_2" Member="prod_cat" ThisKey="cat_id" OtherKey="id" Type="prod_cat" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cart" Member="carts">
+    <Type Name="cart">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="prod_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="total_cost" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="cust_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="quantity" Type="System.Decimal" DbType="Decimal(8,0)" CanBeNull="true" />
+      <Association Name="user_cart" Member="user" ThisKey="cust_id" OtherKey="id" Type="user" IsForeignKey="true" />
+      <Association Name="product_cart" Member="product" ThisKey="prod_id" OtherKey="id" Type="product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.product" Member="products">
+    <Type Name="product">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cat_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prod_name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="price" Type="System.Decimal" DbType="Decimal(8,0)" CanBeNull="true" />
+      <Column Name="discount_price" Type="System.Decimal" DbType="Decimal(8,0)" CanBeNull="true" />
+      <Column Name="size" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cat_id_2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prod_quantity" Type="System.Decimal" DbType="Decimal(8,0)" CanBeNull="true" />
+      <Association Name="product_cart" Member="carts" ThisKey="id" OtherKey="prod_id" Type="cart" />
+      <Association Name="product_order" Member="orders" ThisKey="id" OtherKey="prod_id" Type="order" />
+      <Association Name="product_feedback" Member="feedbacks" ThisKey="id" OtherKey="prod_id" Type="feedback" />
+      <Association Name="prod_cat_product" Member="prod_cat" ThisKey="cat_id" OtherKey="id" Type="prod_cat" IsForeignKey="true" />
+      <Association Name="prod_cat_2_product" Member="prod_cat_2" ThisKey="cat_id_2" OtherKey="Id" Type="prod_cat_2" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.address" Member="addresses">
+    <Type Name="address">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="address" Member="address1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="user_address" Member="user" ThisKey="user_id" OtherKey="id" Type="user" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[order]" Member="orders">
+    <Type Name="order">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="prod_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cust_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="order_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="quantity" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="amount" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="[shipping address]" Member="shipping_address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="order_delivery" Member="deliveries" ThisKey="id" OtherKey="order_id" Type="delivery" />
+      <Association Name="product_order" Member="product" ThisKey="prod_id" OtherKey="id" Type="product" IsForeignKey="true" />
+      <Association Name="user_order" Member="user" ThisKey="cust_id" OtherKey="id" Type="user" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.delivery" Member="deliveries">
+    <Type Name="delivery">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cust_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="delivery_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="delivery_status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="order_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="order_delivery" Member="order" ThisKey="order_id" OtherKey="id" Type="order" IsForeignKey="true" />
+      <Association Name="user_delivery" Member="user" ThisKey="cust_id" OtherKey="id" Type="user" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.feedback" Member="feedbacks">
+    <Type Name="feedback">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cust_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prod_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="message" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="product_feedback" Member="product" ThisKey="prod_id" OtherKey="id" Type="product" IsForeignKey="true" />
+      <Association Name="user_feedback" Member="user" ThisKey="cust_id" OtherKey="id" Type="user" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
